@@ -1,0 +1,35 @@
+{
+  "name": "anti-motivator",
+  "displayName": "Anti-Motivator",
+  "description": "Daily anti-motivational quotes to keep you grounded.",
+  "version": "0.0.1",
+  "publisher": "dasha",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "anti-motivator.showQuote",
+        "title": "Anti-Motivator: Show Quote Now"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/vscode": "^1.94.0",
+    "typescript": "^5.4.0"
+  }
+}
