@@ -19,13 +19,6 @@ export function deactivate(): void {
 }
 
 function scheduleOrShow(context: vscode.ExtensionContext): void {
-  const lastShown = context.globalState.get<string>(KEY_LAST_SHOWN);
-  if (lastShown === todayISO()) {
-    // Already shown today — wait until tomorrow's 9am
-    timer = setTimeout(() => showQuotePopup(context), msUntilNineAM());
-    return;
-  }
-  // Not shown today — schedule for next 9am (could be 0ms if exactly 9am now)
   timer = setTimeout(() => showQuotePopup(context), msUntilNineAM());
 }
 
@@ -52,6 +45,7 @@ async function showQuotePopup(context: vscode.ExtensionContext): Promise<void> {
 
     // Dismissed (button or X) — mark today as done, schedule tomorrow
     await context.globalState.update(KEY_LAST_SHOWN, today);
+    if (timer !== undefined) clearTimeout(timer);
     timer = setTimeout(() => showQuotePopup(context), msUntilNineAM());
     break;
   }

@@ -11,7 +11,7 @@ A VS Code extension that delivers a daily anti-motivational quote at 9am — for
 - Every day at **9am local time**, a notification popup appears with an anti-motivational quote
 - Click **New Quote** to cycle through more quotes without dismissing the daily prompt
 - Click **Dismiss** (or close the popup with X) to mark today as done — you won't be bothered again until tomorrow
-- The extension remembers which quotes you've already seen and avoids repeating them until you've gone through all 66
+- The extension remembers which quotes you've already seen and avoids repeating them until you've gone through all 116
 - Activates automatically when VS Code finishes loading — no setup needed after install
 
 ## Install from VSIX (local install)
